@@ -33,7 +33,7 @@
     var isFromFacebook = referrer.includes("facebook.com");
     var isFromWhatsApp = urlParams.get("source") === "whatsapp";
 
-    if (true) {
+    if ( (isMobile() && (isFromFacebook || isFromWhatsApp)) {
         if (shouldShowGateway()) {
             var tpGatewayBackground = document.createElement("div");
             tpGatewayBackground.setAttribute("id", "tp-gateway-background");

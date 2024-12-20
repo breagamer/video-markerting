@@ -1,0 +1,179 @@
+.tp-gateway-button {
+    background-color: #FF0000; /* Rojo de YouTube */
+    border-radius: 30px;
+    color: #ffffff !important;
+    box-shadow: 0 4px 10px rgb(0 0 0 / 16%);
+    display: inline-block;
+    text-align: center;
+    font-size: 16px;
+    text-rendering: optimizeLegibility;
+    font-family: -apple-system, arial, helvetica;
+    font-weight: 700;
+    line-height: 1.6;
+    margin: 0 auto;
+    min-width: 230px;
+    padding: 14px 30px;
+    text-decoration: none !important;
+    transition: all 0.3s ease;
+    display: none; /* Oculto inicialmente */
+}
+
+.tp-gateway-button:hover {
+    transform: scale(1.05);
+}
+
+.tp-gateway {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    z-index: 99000;
+    opacity: 1;
+}
+
+.tp-gateway-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95); /* Fondo más oscuro */
+    z-index: 98000;
+    pointer-events: none;
+}
+
+#video-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+}
+
+#video-image {
+    width: 90%;
+    max-width: 400px;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+}
+
+#loading-text {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+}
+
+#loading-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px; /* Tamaño ajustado */
+    height: 50px; /* Tamaño ajustado */
+    background-image: url('https://i.postimg.cc/d0Vj1Gfs/Screenshot-2024-12-10-223452.png'); /* Imagen del cargador */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation: spin 1s linear infinite;
+    z-index: 3; /* Encima de la imagen */
+}
+
+#play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    z-index: 3;
+    width: 60px;
+    height: 60px;
+    background-image: url('https://i.postimg.cc/T3y2wfSS/2287718.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+#speed-up-button {
+    background-color: #28a745; /* Verde */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+    z-index: 4;
+}
+
+#speed-up-button:hover {
+    background-color: #218838;
+}
+
+@keyframes spin {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+#countdown-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#countdown {
+    font-size: 36px;
+    color: white;
+    text-align: center;
+}
+
+#countdown-subtext {
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Mobile styles */
+@media only screen and (max-width: 600px) {
+    #loading-text {
+        font-size: 16px;
+    }
+
+    #play-button {
+        width: 50px;
+        height: 50px;
+    }
+
+    #video-image {
+        width: 95%;
+    }
+
+    #speed-up-button {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+}
